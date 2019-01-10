@@ -15,7 +15,9 @@
     "file manager",
     "file plugin",
     "file explorer",
-    "finder"
+    "finder",
+    "vue文件管理器",
+    "vue资源管理器"
   ],
   "repository": {
     "type": "git",
