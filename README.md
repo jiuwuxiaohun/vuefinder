@@ -1,6 +1,14 @@
 
 2019.01.10 jwxh修改为 中文支持  vue文件管理器  仅仅是修改了部分英文词汇到中文.
 
+
+如果你要使用这个包,你可以使用npm安装git上的包方法来安装
+
+如果你直接用npm install 是安装不了这个包的.
+
+
+
+
 # Vuefinder File Manager
 
 #### Readme in progress..

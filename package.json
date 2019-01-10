@@ -9,7 +9,7 @@
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
-  "homepage": "https://github.com/n1crack/vuefinder#readme",
+  "homepage": "https://github.com/jiuwuxiaohun/vuefinder#readme",
   "keywords": [
     "vue",
     "file manager",
