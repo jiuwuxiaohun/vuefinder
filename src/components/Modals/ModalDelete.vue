@@ -1,13 +1,14 @@
 <template>
   <modal @close="$emit('close')">
     <div class="vuefinder-modal-header">
-      Are you sure you want to delete these items?
+      <!--Are you sure you want to delete these items?-->
+      您确定要删除这些项吗?
     </div>
     <div>{{ data.length }} item{{ data.length > 1 ? 's':'' }} selected.</div>
     <div class="vuefinder-modal-body">
       <ul class="delete-list">
-        <li 
-          v-for="item in data" 
+        <li
+          v-for="item in data"
           :key="item.path"
         >
           <div class="delete-list-item">
@@ -19,18 +20,18 @@
       </ul>
     </div>
     <div class="vuefinder-modal-footer">
-      <button 
-        class="vuefinder-button" 
+      <button
+        class="vuefinder-button"
         @click="remove"
-      >Yes, delete!</button>
-      <button 
-        class="vuefinder-button" 
+      >确定,删除</button>
+      <button
+        class="vuefinder-button"
         @click="$emit('close')"
-      >Cancel</button>
+      >取消</button>
       <div style="color:crimson">
-        <span style="font-weight:bold">Caution:</span>
-        You
-        <span style="font-weight:bold">cannot</span> undo this action!
+        <span style="font-weight:bold">注意:</span>
+        您
+        <span style="font-weight:bold">不能</span>撤回这个操作!
       </div>
     </div>
   </modal>
@@ -47,11 +48,11 @@ export default {
         data: {
             type: Array,
             required: true
-        }, 
+        },
         directory:{
             type: String,
             required: true
-        }, 
+        },
         url: {
             type: String,
             required: true

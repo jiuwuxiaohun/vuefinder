@@ -1,45 +1,45 @@
 <template>
   <modal @close="$emit('close')">
     <div class="vuefinder-modal-header">
-      Upload? Select the files
+      上传吗?选择的文件
     </div>
     <div class="vuefinder-modal-body">
-      <div 
-        v-for="({file, percentage, done, failed}, key) in files" 
-        :key="key" 
-        :class="{ 'vuefinder-upload-succeed': done, 'vuefinder-upload-failed' : failed }" 
+      <div
+        v-for="({file, percentage, done, failed}, key) in files"
+        :key="key"
+        :class="{ 'vuefinder-upload-succeed': done, 'vuefinder-upload-failed' : failed }"
         class="vuefinder-file-listing"
       >
         <div class="vuefinder-uploaded-name">{{ file.name }}</div>
         <div class="vuefinder-uploaded-size">{{ fileSizeIEC(file.size) }}</div>
         <div class="vuefinder-uploaded-extra">
           <span v-if="percentage != 0">{{ percentage }}%</span>
-          <button 
-            v-else 
-            class="remove-file" 
-            @click="removeFile( key )">Remove</button>
+          <button
+            v-else
+            class="remove-file"
+            @click="removeFile( key )">移除</button>
         </div>
       </div>
 
       <div class="vuefinder-uploader">
-        <input 
-          id="files" 
-          ref="files" 
-          type="file" 
-          multiple 
-          @change="handleFilesUpload"> 
+        <input
+          id="files"
+          ref="files"
+          type="file"
+          multiple
+          @change="handleFilesUpload">
       </div>
     </div>
-    <div 
-      v-if="errors.length > 0 " 
+    <div
+      v-if="errors.length > 0 "
       class="vuefinder-upload-errors"
     >
-      <div 
-        class="vuefinder-upload-clear-errors" 
+      <div
+        class="vuefinder-upload-clear-errors"
         @click="errors = []"
       >X</div>
-      <div 
-        v-for="(error, key) in errors" 
+      <div
+        v-for="(error, key) in errors"
         :key="key"
       >
         {{ error }}
@@ -47,20 +47,20 @@
     </div>
 
     <div class="vuefinder-modal-footer">
-      <button 
-        class="vuefinder-button" 
+      <button
+        class="vuefinder-button"
         @click="addFiles"
-      >Add Files</button>
-      <button 
-        :disabled="uploadableFiles.length==0" 
-        class="vuefinder-button" 
+      >添加文件</button>
+      <button
+        :disabled="uploadableFiles.length==0"
+        class="vuefinder-button"
         @click="submitFiles"
-      >Upload! ({{ uploadableFiles.length }} items in queue)
+      >上传! 现有({{ uploadableFiles.length }}个任务在队列里)
       </button>
-      <button 
-        class="vuefinder-button" 
+      <button
+        class="vuefinder-button"
         @click="$emit('close')"
-      >Cancel</button>
+      >取消</button>
     </div>
   </modal>
 </template>
@@ -136,7 +136,7 @@ export default {
         submitFiles () {
             this.errors = [];
             let promises = [];
-            
+
             this.files.forEach(({ file, done, failed }, index) => {
                 if (done == true || failed == true) {
                     return;

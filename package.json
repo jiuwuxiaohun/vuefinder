@@ -1,7 +1,7 @@
 {
   "name": "vuefinder",
   "version": "0.2.0",
-  "description": "vuefinder is an elegant web file manager.",
+  "description": "vuefinder is an elegant web file manager. ps:jwxh修改为中文",
   "main": "src/Finder.vue",
   "scripts": {
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -19,11 +19,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/n1crack/vuefinder.git"
+    "url": "git+https://github.com/jiuwuxiaohun/vuefinder.git"
   },
   "author": {
-    "name": "Yusuf Özdemir",
-    "mail": "yusuf@ozdemir.be"
+    "name": "Yusuf Özdemir jwxh",
+    "mail": "yusuf@ozdemir.be mail@95jw.cn"
   },
   "license": "MIT",
   "devDependencies": {

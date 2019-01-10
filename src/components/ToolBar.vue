@@ -1,79 +1,79 @@
 <template>
   <div class="vuefinder-toolbar">
     <div class="vuefinder-toolbar-left">
-      <a 
-        :disabled="selectedItems.length != 1" 
-        class="vuefinder-button" 
+      <a
+        :disabled="selectedItems.length != 1"
+        class="vuefinder-button"
         @click="(selectedItems.length == 1) && $emit('showMenu', 'rename')"
       >
         <span class="vuefinder-icon">
           <font-awesome-icon icon="edit" />
         </span>
-        <span class="is-hidden-mobile">Rename</span>
+        <span class="is-hidden-mobile">重命名</span>
       </a>
-      <a 
-        :disabled="selectedItems.length == 0" 
-        class="vuefinder-button" 
+      <a
+        :disabled="selectedItems.length == 0"
+        class="vuefinder-button"
         @click="(selectedItems.length != 0) && $emit('showMenu', 'delete')"
       >
         <span class="vuefinder-icon">
-          <font-awesome-layers class="fa-layers fa-fw"> 
+          <font-awesome-layers class="fa-layers fa-fw">
             <font-awesome-icon icon="trash" />
-            <font-awesome-layers-text 
+            <font-awesome-layers-text
               v-show="selectedItems.length > 1"
-              :value="selectedItems.length" 
-              class="fa-layers-counter vuefinder-badge" 
+              :value="selectedItems.length"
+              class="fa-layers-counter vuefinder-badge"
               transform="down-8 shrink-9" />
           </font-awesome-layers>
         </span>
-        <span class="is-hidden-mobile">Delete</span>
+        <span class="is-hidden-mobile">删除</span>
       </a>
-      <a 
-        class="vuefinder-button" 
+      <a
+        class="vuefinder-button"
         @click="$emit('showMenu', 'new-folder')"
       >
         <span class="vuefinder-icon">
           <font-awesome-icon icon="folder-plus" />
         </span>
-        <span class="is-hidden-mobile">NewFolder</span>
+        <span class="is-hidden-mobile">新建文件夹</span>
       </a>
-      <a 
-        :disabled="selectedItems.length != 1" 
-        class="vuefinder-button" 
+      <a
+        :disabled="selectedItems.length != 1"
+        class="vuefinder-button"
         @click="(selectedItems.length == 1) && $emit('showMenu', 'preview')"
       >
         <span class="vuefinder-icon">
           <font-awesome-icon icon="eye" />
         </span>
-        <span class="is-hidden-mobile">Preview</span>
+        <span class="is-hidden-mobile">预览</span>
       </a>
     </div>
 
     <div class="vuefinder-toolbar-right">
-      <a 
-        class="vuefinder-button" 
+      <a
+        class="vuefinder-button"
         @click="$emit('showMenu', 'upload')"
       >
         <span class="vuefinder-icon">
           <font-awesome-icon icon="upload" />
         </span>
-        <span class="is-hidden-mobile">Upload</span>
+        <span class="is-hidden-mobile">上传文件</span>
       </a>
-      <a 
-        class="vuefinder-button" 
+      <a
+        class="vuefinder-button"
         @click="$emit('update:listview', ! listview)"
       >
         <span class="vuefinder-icon">
-          <font-awesome-icon 
-            v-if="listview" 
+          <font-awesome-icon
+            v-if="listview"
             icon="list"
           />
-          <font-awesome-icon 
-            v-else 
+          <font-awesome-icon
+            v-else
             icon="th-large"
           />
         </span>
-        <span class="is-hidden-mobile">View</span>
+        <span class="is-hidden-mobile">视图</span>
       </a>
     </div>
   </div>
@@ -86,7 +86,7 @@ import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fort
 export default {
     name: 'Toolbar',
     components: {
-        FontAwesomeIcon, 
+        FontAwesomeIcon,
         FontAwesomeLayers,
         FontAwesomeLayersText
     },

@@ -1,32 +1,32 @@
 <template>
   <modal @close="$emit('close')">
     <div class="vuefinder-modal-header">
-      Create a new folder
+      创建一个新文件夹
     </div>
 
     <div class="vuefinder-modal-body">
-      <input 
+      <input
         ref="nameInput"
-        v-model="tempName" 
-        class="vuefinder-input" 
-        type="text" 
-        value="" 
-        placeholder="folder name"
+        v-model="tempName"
+        class="vuefinder-input"
+        type="text"
+        value=""
+        placeholder="文件夹名称"
       >
     </div>
 
     <div class="vuefinder-modal-footer">
-      <button 
-        :disabled="tempName.length < 1" 
-        class="vuefinder-button" 
+      <button
+        :disabled="tempName.length < 1"
+        class="vuefinder-button"
         @click="makeFolder(directory,tempName)"
       >
-        Create
+        创建
       </button>
-      <button 
-        class="vuefinder-button" 
+      <button
+        class="vuefinder-button"
         @click="$emit('close')"
-      >Cancel</button>
+      >取消</button>
     </div>
   </modal>
 </template>

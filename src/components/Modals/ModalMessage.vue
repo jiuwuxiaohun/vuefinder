@@ -1,12 +1,12 @@
 <template>
   <modal @close="$emit('close')">
     <div class="vuefinder-modal-header">
-      Message:
+      提示:
     </div>
     <div class="vuefinder-modal-body">
       <div>
-        <span 
-          :class="'message-'+type" 
+        <span
+          :class="'message-'+type"
           class="message-icon"
         >
           <font-awesome-icon :icon="icons[type]" />
@@ -16,10 +16,10 @@
     </div>
 
     <div class="vuefinder-modal-footer">
-      <button 
-        class="vuefinder-button" 
+      <button
+        class="vuefinder-button"
         @click="$emit('close')"
-      >Close</button>
+      >关闭</button>
     </div>
   </modal>
 </template>
@@ -67,4 +67,3 @@ export default {
   color: crimson;
 }
 </style>
- 

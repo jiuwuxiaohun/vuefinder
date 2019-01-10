@@ -4,24 +4,24 @@
       {{ title_shorten(item.basename) }}
     </div>
     <div class="vuefinder-modal-body">
-      <transition-group 
-        name="vuefinder-fade" 
-        tag="div" 
+      <transition-group
+        name="vuefinder-fade"
+        tag="div"
         class="vuefinder-modal-content"
       >
-        <file-previewer 
-          v-show="item.size > 0" 
-          key="previewer" 
-          :url="url+'?q=read'" 
-          :path="item.path" 
-          :type="item.type" 
+        <file-previewer
+          v-show="item.size > 0"
+          key="previewer"
+          :url="url+'?q=read'"
+          :path="item.path"
+          :type="item.type"
         />
-        <div 
-          key="vuefinder-info-extra" 
+        <div
+          key="vuefinder-info-extra"
           class="vuefinder-info-extra"
         >
-          <div 
-            v-show="item.type != 'folder'" 
+          <div
+            v-show="item.type != 'folder'"
             class="vuefinder-info-size"
           >
             <span class="vuefinder-info-title">size:</span>
@@ -31,14 +31,14 @@
             <span class="vuefinder-info-title">time:</span>
             <span>{{ time() }}</span>
           </div>
-          <div 
-            v-show="item.fileUrl" 
+          <div
+            v-show="item.fileUrl"
             class="vuefinder-info-url"
           >
             <span class="vuefinder-info-title">url:</span>
-            <input 
-              :value="item.fileUrl" 
-              type="text" 
+            <input
+              :value="item.fileUrl"
+              type="text"
               class="vuefinder-input"
             >
           </div>
@@ -47,18 +47,18 @@
     </div>
 
     <div class="vuefinder-modal-footer">
-      <button 
-        class="vuefinder-button" 
+      <button
+        class="vuefinder-button"
         @click="$emit('close')"
-      >Close</button>
+      >关闭</button>
 
-      <button 
-        v-if="item.type != 'folder'" 
-        class="vuefinder-button" 
+      <button
+        v-if="item.type != 'folder'"
+        class="vuefinder-button"
         @click="download"
       >
         <font-awesome-icon icon="download" />
-        Download
+        下载
       </button>
     </div>
   </modal>

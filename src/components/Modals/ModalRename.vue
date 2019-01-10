@@ -1,32 +1,32 @@
 <template>
   <modal @close="$emit('close')">
     <div class="vuefinder-modal-header">
-      Rename
+      重命名
     </div>
     <div class="vuefinder-modal-body">
       <div>
         <span>{{ item.dirname }}/</span>{{ item.basename }}
       </div>
-      <input 
+      <input
         ref="nameInput"
-        v-model="tempName" 
-        :placeholder="item.basename" 
-        class="vuefinder-input" 
+        v-model="tempName"
+        :placeholder="item.basename"
+        class="vuefinder-input"
         type="text"
       >
     </div>
 
     <div class="vuefinder-modal-footer">
-      <button 
-        :disabled="tempName.length ==0 " 
-        class="vuefinder-button" 
+      <button
+        :disabled="tempName.length ==0 "
+        class="vuefinder-button"
         @click="rename(item.path,directory + '/' + tempName)"
-      >Rename
+      >重命名
       </button>
-      <button 
-        class="vuefinder-button" 
+      <button
+        class="vuefinder-button"
         @click="$emit('close')"
-      >Cancel</button>
+      >取消</button>
     </div>
   </modal>
 </template>
@@ -65,7 +65,7 @@ export default {
         rename (from, to) {
             if (!this.url) {
                 this.$emit('close');
-                this.$emit('error', 'There is no url defined!', 'error');
+                this.$emit('error', '没有定义url!', 'error');
                 return;
             }
             axios.get(this.url, {
@@ -81,7 +81,7 @@ export default {
                     this.$root.$emit('vuefinder-item-renamed', from, to);
                 } else {
                     this.$emit('close');
-                    this.$emit('error', 'Error occured!!', 'error');
+                    this.$emit('error', '发生错误!!', 'error');
                 }
             }).catch(error => {
                 this.$emit('close');

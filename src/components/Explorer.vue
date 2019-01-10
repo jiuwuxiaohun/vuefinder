@@ -1,26 +1,26 @@
 <template>
 
-  <transition-group 
-    :class="{ 'list': listview }" 
-    class="vuefinder-explorer" 
+  <transition-group
+    :class="{ 'list': listview }"
+    class="vuefinder-explorer"
     name="vuefinder-items"
     tag="div"
   >
-    <file-icon 
-      v-show="! isRoot" 
-      key="keyBackButton" 
-      icon="angle-left" 
+    <file-icon
+      v-show="! isRoot"
+      key="keyBackButton"
+      icon="angle-left"
       @click.native="$emit('back')">
-      <span>Go back</span>
+      <span>返回</span>
     </file-icon>
 
     <slot />
 
-    <div 
-      v-if="! $slots.default" 
-      key="empty-list" 
+    <div
+      v-if="! $slots.default"
+      key="empty-list"
       class="vuefinder-empty-list">
-      <span>There is no file.</span>
+      <span>这里没有任何文件或文件夹!</span>
     </div>
 
   </transition-group>

@@ -1,29 +1,29 @@
 <template>
   <div class="vuefinder-list-view-sort-bar">
-    <span 
-      class="vuefinder-sort-bar vuefinder-list-basename" 
+    <span
+      class="vuefinder-sort-bar vuefinder-list-basename"
       @click="$emit('select', 'basename')"
-    >Name
-      <font-awesome-icon 
-        v-show="sort.active && sort.column=='basename'" 
+    >名称
+      <font-awesome-icon
+        v-show="sort.active && sort.column=='basename'"
         :icon="sort.order=='asc'? 'sort-down': 'sort-up'"
       />
     </span>
-    <span 
-      class="vuefinder-sort-bar vuefinder-list-size is-hidden-mobile" 
+    <span
+      class="vuefinder-sort-bar vuefinder-list-size is-hidden-mobile"
       @click="$emit('select', 'size')"
-    >Size
-      <font-awesome-icon 
-        v-show="sort.active && sort.column=='size'" 
+    >大小
+      <font-awesome-icon
+        v-show="sort.active && sort.column=='size'"
         :icon="sort.order=='asc'? 'sort-down': 'sort-up'"
       />
     </span>
-    <span 
-      class="vuefinder-sort-bar vuefinder-list-time is-hidden-mobile" 
+    <span
+      class="vuefinder-sort-bar vuefinder-list-time is-hidden-mobile"
       @click="$emit('select', 'timestamp')"
-    >Date
-      <font-awesome-icon 
-        v-show="sort.active && sort.column=='timestamp'" 
+    >时间
+      <font-awesome-icon
+        v-show="sort.active && sort.column=='timestamp'"
         :icon="sort.order=='asc'? 'sort-down': 'sort-up'"
       />
     </span>
