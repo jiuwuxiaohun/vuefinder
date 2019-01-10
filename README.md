@@ -4,10 +4,17 @@
 
 如果你要使用这个包,你可以使用npm安装git上的包方法来安装
 
-如果你直接用npm install 是安装不了这个包的.
+如果你直接用 npm install 是安装不了这个包的.
+同时vuefinder的版本号后面被修改了.
 
+比如版本号 vuefinder2.0.0  被修改了 vuefinder2.0.0.95 因为相同版本,npm总是去原作者那安装了.
 
+如何安装,请执行下面的代码:
+npm install git+https://github.com/jiuwuxiaohun/vuefinder.git --save
+或安装了cnpm的情况下
+cnpm install git+https://github.com/jiuwuxiaohun/vuefinder.git --save
 
+--------------
 
 # Vuefinder File Manager
 
