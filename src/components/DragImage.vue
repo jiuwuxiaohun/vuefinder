@@ -42,7 +42,8 @@ export default {
   font-size: 3em;
 }
 .vuefinder-drag-image{
-  display : inline-flex;
+  display: none;
+  //display : inline-flex;
   position : absolute;
   top : -2000px;
   left : -2000px;
