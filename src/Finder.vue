@@ -49,7 +49,8 @@
         {{ hoverText }}
       </span>
       <span class="vuefinder-status-message">
-        vuefinder v0.2
+        <!--vuefinder v0.2-->
+        文件管理器
       </span>
     </div>
 
@@ -236,7 +237,9 @@ export default {
         },
 
         getSelectedItems () {
-            return this.getSelectedComponents().map(a => a.item);
+            return this.getSelectedComponents().map(a => {
+              return a.item;
+            });
         },
 
         getNodeElements() {

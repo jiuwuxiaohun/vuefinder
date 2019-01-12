@@ -74,7 +74,7 @@ export default {
   right: 0;
   bottom: 0;
   width: 50%;
-  max-width: 250px;
+  max-width: 350px;
   height: 50px;
 }
 
