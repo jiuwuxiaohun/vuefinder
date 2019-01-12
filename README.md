@@ -7,7 +7,7 @@
 如果你直接用 npm install 是安装不了这个包的.
 同时vuefinder的版本号后面被修改了.
 
-比如版本号 vuefinder2.0.0  被修改了 vuefinder2.0.0.95 因为相同版本,npm总是去原作者那安装了.
+比如版本号 vuefinder2.0.0  被修改了 vuefinder2.0.095 因为相同版本,npm总是去原作者那安装了.
 
 如何安装,请执行下面的代码:
 npm install git+https://github.com/jiuwuxiaohun/vuefinder.git --save
