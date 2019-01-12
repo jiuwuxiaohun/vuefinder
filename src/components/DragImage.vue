@@ -1,11 +1,11 @@
 <template>
   <span class="vuefinder-icon vuefinder-drag-image">
-    <font-awesome-layers class="fa-layers fa-fw"> 
+    <font-awesome-layers class="fa-layers fa-fw">
       <font-awesome-icon icon="copy" />
-      <font-awesome-layers-text 
+      <font-awesome-layers-text
         v-show="count > 1"
-        :value="count" 
-        class="fa-layers-counter vuefinder-badge" 
+        :value="count"
+        class="fa-layers-counter vuefinder-badge"
         transform="down-20 shrink-11" />
     </font-awesome-layers>
   </span>
@@ -17,16 +17,16 @@ import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fort
 
 export default {
     name: 'DragImage',
-    components: {         
-        FontAwesomeIcon, 
+    components: {
+        FontAwesomeIcon,
         FontAwesomeLayers,
-        FontAwesomeLayersText 
-    },    
+        FontAwesomeLayersText
+    },
     props:{
         count: {
             type: Number,
             default: 5
-        } 
+        }
     }
 };
 </script>
@@ -42,10 +42,10 @@ export default {
   font-size: 3em;
 }
 .vuefinder-drag-image{
-  display : inline-flex; 
-  position : absolute; 
-  top : -200px; 
-  left : -200px; 
+  display : inline-flex;
+  position : absolute;
+  top : -2000px;
+  left : -2000px;
 }
 
 
