@@ -1,8 +1,8 @@
 <template>
   <div class="vuefinder-file-previewer">
-    <component 
-      :is="preview[type] || preview['default']" 
-      :url="url" 
+    <component
+      :is="preview[type] || preview['default']"
+      :url="url"
       :path="path"
     />
     <slot />
@@ -46,7 +46,7 @@ var preview = {
         template: `
                 <video width="100%" height="100%" controls>
                     <source :src="url+'&path='+encodeURIComponent(this.path)" type="video/mp4">
-                    Your browser does not support the video tag.
+                    您的浏览器不支持视频 video 标签.
                 </video>
             `
     },
@@ -55,7 +55,7 @@ var preview = {
         template: `
                 <audio controls>
                     <source :src="url+'&path='+encodeURIComponent(this.path)" type="audio/mpeg">
-                    Your browser does not support the audio element.
+                    您的浏览器不支持音频 audio 标签.
                 </audio>
             `
     }

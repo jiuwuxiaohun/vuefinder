@@ -24,18 +24,18 @@
             v-show="item.type != 'folder'"
             class="vuefinder-info-size"
           >
-            <span class="vuefinder-info-title">size:</span>
+            <span class="vuefinder-info-title">大小:</span>
             <span>{{ fileSizeIEC(item.size) }}</span>
           </div>
           <div class="vuefinder-info-time">
-            <span class="vuefinder-info-title">time:</span>
+            <span class="vuefinder-info-title">时间:</span>
             <span>{{ time() }}</span>
           </div>
           <div
             v-show="item.fileUrl"
             class="vuefinder-info-url"
           >
-            <span class="vuefinder-info-title">url:</span>
+            <span class="vuefinder-info-title">URL地址:</span>
             <input
               :value="item.fileUrl"
               type="text"
@@ -148,6 +148,6 @@ export default {
 
 .vuefinder-info-title {
   font-weight: bold;
-  width: 50px;
+  width: 90px;
 }
 </style>

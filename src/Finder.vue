@@ -69,8 +69,8 @@
       @error="msgBox"
       @refresh="openFolder"/>
 
-    <drag-image 
-      ref="dragImage" 
+    <drag-image
+      ref="dragImage"
       :count="getSelectedItems().length"/>
 
   </div>
@@ -81,7 +81,7 @@ import axios from 'axios';
 import DragSelect from 'dragselect';
 
 // FontAwesome icons
-import { library } from '@fortawesome/fontawesome-svg-core'; 
+import { library } from '@fortawesome/fontawesome-svg-core';
 import * as IconPack from './utilities/icons';
 library.add(...Object.values(IconPack));
 
@@ -137,14 +137,14 @@ export default {
         dropzone: {
             bind: function(el, binding, vnode, oldVnode){
                 el.addEventListener('dragenter', function(e){
-                    e.preventDefault();                    
+                    e.preventDefault();
                 });
                 el.addEventListener('dragover', function(e){
-                    e.preventDefault(); 
-          
+                    e.preventDefault();
+
                 });
                 el.addEventListener('drop', function(e){
-                    e.preventDefault(); 
+                    e.preventDefault();
 
                     vnode.context.selectable.start();
                     console.log(e.dataTransfer.getData('data') );
@@ -226,7 +226,7 @@ export default {
     },
 
     methods: {
-  
+
         getComponentbyNode(element) {
             return this.$refs.files.find(a => a.$el == element);
         },
@@ -267,7 +267,7 @@ export default {
             let sort = (active, column, order) => {
                 return {active, column, order};
             };
-             
+
             if (this.sort.active && this.sort.column == column) {
                 this.sort = sort(this.sort.order == 'asc', column, 'desc');
             } else {
@@ -313,14 +313,14 @@ export default {
 
         addContextItems(item) {
             this.context.items.push({
-                title: 'open',
+                title: '打开',
                 icon: 'folder-open',
                 action: () => this.open(item)
             });
 
             if (this.isSelected(item) && this.getSelectedItems().length > 1) {
                 this.context.items.push({
-                    title: 'delete (' + this.getSelectedItems().length + ' items)',
+                    title: '删除 (' + this.getSelectedItems().length + ' items)',
                     icon: 'times-circle',
                     action: () => this.showMenu('delete', this.getSelectedItems())
                 });
@@ -328,17 +328,17 @@ export default {
             }
 
             this.context.items.push({
-                title: 'rename',
+                title: '重命名',
                 icon: 'edit',
                 action: () => this.showMenu('rename', [item])
             });
             this.context.items.push({
-                title: 'preview',
+                title: '预览',
                 icon: 'eye',
                 action: () => this.showMenu('preview', [item])
             });
             this.context.items.push({
-                title: 'delete',
+                title: '删除',
                 icon: 'times-circle',
                 action: () => this.showMenu('delete', [item])
             });
