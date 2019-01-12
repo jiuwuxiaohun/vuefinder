@@ -1,5 +1,4 @@
 <template>
-
   <transition-group
     :class="{ 'list': listview }"
     class="vuefinder-explorer"
@@ -11,10 +10,14 @@
       key="keyBackButton"
       icon="angle-left"
       @click.native="$emit('back')">
-      <span>返回</span>
+      <span>返回上一级</span>
     </file-icon>
 
     <slot />
+
+    <file-icon key="keyLoading" v-show="loading" icon="spinner" spin>
+      <span>数据加载中...</span>
+    </file-icon>
 
     <div
       v-if="! $slots.default"
@@ -41,6 +44,10 @@ export default {
         listview: {
             type: Boolean,
             required: true
+        },
+        loading: {
+          type: Boolean,
+          default:false
         }
     },
 };

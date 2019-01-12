@@ -14,6 +14,14 @@ npm install git+https://github.com/jiuwuxiaohun/vuefinder.git --save
 或安装了cnpm的情况下
 cnpm install git+https://github.com/jiuwuxiaohun/vuefinder.git --save
 
+
+新增了单选文件功能,可以用于做文件选择器了.
+使用方法为:
+  <vuefinder url="http://域名/网址/vuePhpFinder" @selectBack="selectBack" :back="true" theme="light" />
+
+	selectBack(item)  将返回被选择的条目.
+	back为true时候,将显示选择器功能,否则隐藏选择功能.
+
 --------------
 
 # Vuefinder File Manager

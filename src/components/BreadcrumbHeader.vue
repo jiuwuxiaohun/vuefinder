@@ -1,8 +1,8 @@
 <template>
   <div class="vuefinder-header">
     <div class="vuefinder-breadcrumb">
-      <div 
-        class="vuefinder-breadcrumb-item" 
+      <div
+        class="vuefinder-breadcrumb-item"
         @click="$emit('openFolder',root)"
       >
         <span class="icon">
@@ -10,13 +10,13 @@
         </span>
       </div>
     </div>
-    <div 
-      v-for="(item, index) of breadcrumb" 
-      :key="index" 
+    <div
+      v-for="(item, index) of breadcrumb"
+      :key="index"
       class="vuefinder-breadcrumb"
     >
-      <div 
-        class="vuefinder-breadcrumb-item" 
+      <div
+        class="vuefinder-breadcrumb-item"
         @click="$emit('openFolder',item.dirname)"
       >
         <span v-if="item.length != 0">
@@ -24,13 +24,13 @@
         </span>
       </div>
     </div>
-    <div 
-      v-show="loading" 
+    <div
+      v-show="loading"
       class="vuefinder-loader"
     >
       <span class="icon">
-        <font-awesome-icon 
-          icon="spinner" 
+        <font-awesome-icon
+          icon="spinner"
           spin
         />
       </span>

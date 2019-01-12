@@ -1,8 +1,8 @@
 <template>
   <div class="vuefinder-file-content">
     <div class="vuefinder-file-icon">
-      <span 
-        :class="{ 'light': icon != 'folder' }" 
+      <span
+        :class="{ 'light': icon != 'folder' }"
         class="vuefinder-icon" >
         <font-awesome-icon :icon="icon" />
       </span>
@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .vuefinder-file-content {
-  width: 110px;
+  width: 150px;
   margin: 4px;
   display: flex;
   flex-direction: column;

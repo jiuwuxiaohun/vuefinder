@@ -5,9 +5,10 @@
     @contextmenu.prevent>
 
     <tool-bar
+      :back="back"
       :selected-items="getSelectedItems()"
       :listview.sync="listview"
-      @showMenu="showMenu"/>
+      @showMenu="showMenu" @selectBack="selectBack"/>
 
     <breadcrumb-header
       :root="data.root"
@@ -24,6 +25,7 @@
       ref="explorer"
       :listview="listview"
       :is-root="data.dirname == data.root"
+      :loading="loading"
       @contextmenu.native="showContextMenu($event)"
       @back="openFolder(data.parent)"
       @mousedown.native.alt="selectable.stop()"
@@ -32,12 +34,14 @@
       <explorer-item
         v-draggable
         v-dropzone
+        :url="url"
         v-for="item in sortedFiles"
         ref="files"
         :key="item.path"
         :item="item"
         :listview="listview"
         :draggable="isSelected(item) ? true : false"
+        :loading="loading"
         @dblclick.native.stop.prevent="open(item)"
         @contextmenu.native="addContextItems(item)"
         @mouseover.native="hoverText = item.basename"
@@ -171,6 +175,10 @@ export default {
             type: String,
             default: 'light'
         },
+        back: {
+            type: Boolean,
+            default: false
+        },
     },
     data() {
         return {
@@ -285,7 +293,7 @@ export default {
         showContextMenu(e) {
             this.context.active = true;
             this.context.items.push({
-                title: 'new folder',
+                title: '新建文件夹',
                 icon: 'folder-plus',
                 action: () => this.showMenu('new-folder')
             });
@@ -315,6 +323,17 @@ export default {
         },
 
         addContextItems(item) {
+
+            //console.log('item',item);
+
+            if ( this.back===true && this.getSelectedItems().length <= 1 && item.type!=='folder') {
+              this.context.items.push({
+                title: '选中(' + item.basename + '),返回之前操作',
+                icon: 'folder-open',
+                action: () =>  this.selectBack([item])
+              });
+            }
+
             this.context.items.push({
                 title: '打开',
                 icon: 'folder-open',
@@ -370,6 +389,12 @@ export default {
             this.modal.item = item || this.getSelectedItems();
             this.modal.type = type;
             this.modal.active = true;
+        },
+
+        selectBack(item = false){
+          let arg_item = item || this.getSelectedItems();
+          console.log('arg_item',arg_item);
+          this.$emit('selectBack', arg_item)
         }
     }
 };

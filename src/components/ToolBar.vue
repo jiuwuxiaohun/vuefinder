@@ -47,6 +47,19 @@
         </span>
         <span class="is-hidden-mobile">预览</span>
       </a>
+
+
+      <a
+              v-show="back===true && selectedItems.length === 1"
+              class="vuefinder-button"
+              @click="(selectedItems.length == 1) && $emit('selectBack')"
+      >
+        <span class="vuefinder-icon">
+          <span class="is-hidden-mobile"><b>选中</b></span>
+        </span>
+        <span class="is-hidden-mobile"><b>返回之前操作</b></span>
+      </a>
+
     </div>
 
     <div class="vuefinder-toolbar-right">
@@ -99,6 +112,10 @@ export default {
             type: Boolean,
             required: true
         },
+        back: {
+          type: Boolean,
+          default: false
+        },
     }
 };
 </script>
@@ -120,6 +137,7 @@ export default {
   .vuefinder-button {
     border: 1px solid transparent;
     font-size: 14px;
+    text-align: center;
   }
 
   .vuefinder-icon {
