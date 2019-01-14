@@ -34,7 +34,8 @@ export default {
 <style lang="scss" scoped>
 
 .vuefinder-icon {
-  display: inline-flex;
+  display: none; //现在这个按钮是没有使用的,所以隐藏掉.
+  //display: inline-flex;
   margin: auto;
   justify-content: center;
   height: 3rem;
@@ -42,7 +43,7 @@ export default {
   font-size: 3em;
 }
 .vuefinder-drag-image{
-  display: none;
+  display: none; //现在这个按钮是没有使用的,所以隐藏掉.
   //display : inline-flex;
   position : absolute;
   top : -2000px;
