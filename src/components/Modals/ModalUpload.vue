@@ -55,7 +55,7 @@
         :disabled="uploadableFiles.length==0"
         class="vuefinder-button"
         @click="submitFiles"
-      >上传! 现有({{ uploadableFiles.length }}个任务在队列里)
+      ><b>上传! 现有({{ uploadableFiles.length }}个任务在队列里)</b>
       </button>
       <button
         class="vuefinder-button"
