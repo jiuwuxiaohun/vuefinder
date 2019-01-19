@@ -1,6 +1,6 @@
 {
   "name": "vuefinder",
-  "version": "0.2.0953",
+  "version": "0.2.0954",
   "description": "vuefinder is an elegant web file manager. ps:jwxh修改为中文",
   "main": "src/Finder.vue",
   "scripts": {

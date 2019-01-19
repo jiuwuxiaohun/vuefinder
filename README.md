@@ -17,10 +17,19 @@ cnpm install git+https://github.com/jiuwuxiaohun/vuefinder.git --save
 
 新增了单选文件功能,可以用于做文件选择器了.
 使用方法为:
-  <vuefinder url="http://域名/网址/vuePhpFinder" @selectBack="selectBack" :back="true" theme="light" />
 
+	<vuefinder url="http://域名/网址/vuePhpFinder" @selectBack="selectBack" :back="true" theme="light"  :accept="input的accept属性,用于控制选择那些类型的文件" />
+----
 	selectBack(item)  将返回被选择的条目.
 	back为true时候,将显示选择器功能,否则隐藏选择功能.
+
+	accept="image/gif,image/jpeg,image/jpg,image/png"
+	
+------
+一些可能的坑:
+
+1.上传组件的进度功能,将可能被mock.js所影响,正式环境请去掉mock.js.
+
 
 --------------
 

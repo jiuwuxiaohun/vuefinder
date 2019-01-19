@@ -69,6 +69,7 @@
       :is="'modal-'+ modal.type"
       :directory="data.dirname"
       :url="url"
+      :accept="accept"
       :data="modal.item"
       @close="modal.active = false"
       @error="msgBox"
@@ -178,6 +179,10 @@ export default {
         back: {
             type: Boolean,
             default: false
+        },
+        accept: {
+            type: String,
+            default:'image/gif,image/jpeg,image/jpg,image/png'
         },
     },
     data() {
