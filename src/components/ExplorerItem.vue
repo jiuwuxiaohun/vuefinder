@@ -50,11 +50,12 @@
     components: { FileIcon },
     mixins: [filesize],
     data() {
-      return {
-        url: 'http://jwpt.com/admin/attachment/vueFinder'
-      }
     },
     props: {
+      url: {
+        type: String,
+        required: true
+      },
       item: {
         type: Object,
         required: true
