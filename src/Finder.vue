@@ -35,6 +35,7 @@
         v-draggable
         v-dropzone
         :url="url"
+        :fileBaseUrl="fileBaseUrl"
         v-for="item in sortedFiles"
         ref="files"
         :key="item.path"
@@ -69,6 +70,7 @@
       :is="'modal-'+ modal.type"
       :directory="data.dirname"
       :url="url"
+      :fileBaseUrl="fileBaseUrl"
       :accept="accept"
       :data="modal.item"
       @close="modal.active = false"
@@ -168,6 +170,10 @@ export default {
             type: String,
             required: true
         },
+        fileBaseUrl: {
+            type: String,
+            required: true
+        },
         path: {
             type: String,
             default: '.'
@@ -219,6 +225,7 @@ export default {
         }
     },
     mounted() {
+      console.log('fileBaseUrl',this.fileBaseUrl);
         this.selectable = new DragSelect({
             area: this.$refs.explorer.$el,
             customStyles: true,
@@ -379,6 +386,7 @@ export default {
             this.selectable.clearSelection();
             if (item.type == 'folder') {
                 this.$root.$emit('vuefinder-folder-clicked');
+                this.selectedItems=[];
                 this.fetchIndex(this.url, item.path);
             } else {
                 this.$root.$emit('vuefinder-item-clicked');

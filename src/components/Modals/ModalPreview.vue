@@ -13,6 +13,7 @@
           v-show="item.size > 0"
           key="previewer"
           :url="url+'?q=read'"
+          :fileBaseUrl="fileBaseUrl"
           :path="item.path"
           :type="item.type"
         />
@@ -32,12 +33,12 @@
             <span>{{ time() }}</span>
           </div>
           <div
-            v-show="item.fileUrl"
+            v-show="item.path"
             class="vuefinder-info-url"
           >
             <span class="vuefinder-info-title">URL地址:</span>
             <input
-              :value="item.fileUrl"
+              :value="fileBaseUrl+item.path"
               type="text"
               class="vuefinder-input"
             >
@@ -83,6 +84,10 @@ export default {
             required: true
         },
         url: {
+            type: String,
+            required: true
+        },
+        fileBaseUrl: {
             type: String,
             required: true
         }

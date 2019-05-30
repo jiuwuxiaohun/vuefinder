@@ -26,7 +26,8 @@
         <div v-if="listview==false && item['type']==='file-image'">
             <div class="jw-img-box">
                 <div class="jw-img-file-icon" >
-                    <img class="jw-div-bg-img" :src="url+'?q=read&path='+encodeURIComponent(item['path'])"/>
+                    <!--<img class="jw-div-bg-img" :src="url+'?q=read&path='+encodeURIComponent(item['path'])"/>-->
+                    <img class="jw-div-bg-img" :src="fileBaseUrl+item['path']"/>
                 </div>
 
                 <div class="jw-item-file-name">
@@ -49,10 +50,12 @@
     name: 'Item',
     components: { FileIcon },
     mixins: [filesize],
-    data() {
-    },
     props: {
       url: {
+        type: String,
+        required: true
+      },
+      fileBaseUrl:{
         type: String,
         required: true
       },
