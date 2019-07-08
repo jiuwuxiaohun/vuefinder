@@ -85,6 +85,10 @@
         type: String,
         required: true
       },
+      uploadurl: {
+        type: String,
+        default:'' //当上传url为空时,则使用默认url+?load
+      },
       directory: {
         type: String,
         required: true
@@ -153,9 +157,9 @@
           let formData = new FormData()
           formData.append('file', file)
           formData.append('path', this.directory)
-
+          let uploadUrl=this.uploadurl?this.uploadurl:this.url + '?q=upload'
           promises.push(
-            axios.post(this.url + '?q=upload',
+            axios.post(uploadUrl,
               formData,
               {
                 headers: {

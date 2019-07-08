@@ -70,6 +70,7 @@
       :is="'modal-'+ modal.type"
       :directory="data.dirname"
       :url="url"
+      :uploadurl="uploadurl"
       :fileBaseUrl="fileBaseUrl"
       :accept="accept"
       :data="modal.item"
@@ -169,6 +170,10 @@ export default {
         url: {
             type: String,
             required: true
+        },
+        uploadurl: {
+            type: String,
+            default: ''
         },
         fileBaseUrl: {
             type: String,
