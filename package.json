@@ -1,6 +1,6 @@
 {
   "name": "vuefinder",
-  "version": "0.2.0958",
+  "version": "0.2.0959",
   "description": "vuefinder is an elegant web file manager. ps:jwxh修改为中文",
   "main": "src/Finder.vue",
   "scripts": {
@@ -35,7 +35,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/vue-fontawesome": "^0.1.0",
-    "axios": "^0.18.0",
+    "axios": "0.18.1",
     "date-fns": "^2.0.0-alpha.16",
     "dragselect": "^1.8.0",
     "vue": "^2.5.16"
