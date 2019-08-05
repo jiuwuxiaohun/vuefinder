@@ -103,6 +103,8 @@ import ListviewSortbar from './components/ListviewSortbar.vue';
 import DragImage from './components/DragImage.vue';
 import * as Modals from './utilities/modals';// Modal Components
 
+
+
 export default {
     name: 'Vuefinder',
     components: {
@@ -170,6 +172,10 @@ export default {
         url: {
             type: String,
             required: true
+        },
+        httpHeaders:{
+          type: Object,
+          default:{}
         },
         uploadurl: {
             type: String,
@@ -250,7 +256,21 @@ export default {
         });
 
     },
+    created(){
+      // 当axios注入无效的时候,是因为使用的axios版本和第三方npm包的版本不一样!!
+      if (Object.keys(this.httpHeaders).length > 0){
+        console.log('vueFinder第三方包 注入httpHeaders')
+        axios.interceptors.request.use(
+          config => {
+            config.headers=this.httpHeaders
+            return config
+          },
+          err => {
+            return Promise.reject(err)
+          })
+      }
 
+    },
     methods: {
 
         getComponentbyNode(element) {
